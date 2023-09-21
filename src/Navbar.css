@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Epilogue&family=Lexend+Deca&family=Montserrat&family=Outfit&family=Quicksand&display=swap');
+
+*{
+    font-family: 'Epilogue', sans-serif;
+    transition: 0.3s all ease;
+}
+li{
+    opacity: 0.6;
+}
+li:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+.container .logo{
+    padding-left: 10px;
+}
+.container .navlist{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.container ul{
+    display: flex;
+    gap: 10%;
+}
+.container ul li{
+    list-style: none;
+}
+.container ul .special{
+    white-space: nowrap; /* Prevent line breaks */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.container .log{
+    width: 200px;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+}
+.container .log{
+    list-style: none;
+}
+.container .log .reg{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* dropdowns */
+.container .special-container{
+    position: absolute;
+    top: 180%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+    transition:0.2s ease;
+}
+.container .special-container-one{
+    right: 0;
+}
+.container .special:hover .special-container{
+    opacity: 1;
+}
+.today ion-icon{
+    color: #726CEE;
+}
+.calendar ion-icon{
+    color: #4BB1DA;
+}
+.alarm ion-icon{
+    color: #DFC82B;
+}
+.time ion-icon{
+    color: #8E4CB6;
+}
+.second-container{display: none;}
+
+
+/* responsiveness */
+@media (max-width: 390px) {
+    /* hide first navbar */
+    .container{display: none;}
+
+    /* style second navbar */
+    input, label{display: block;}
+    .second-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px 0 10px;
+    }
+    .second-container .navlist{
+        padding-top: 60px !important;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        background-color: #ffff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+        text-align: left;
+        top: 0;
+        right: -10000px;
+        padding-top: 20px;
+        z-index: 100;
+    }
+    .second-container ul{
+        flex-direction: column;
+    }
+    .second-container ul li{
+        list-style: none;
+        padding-bottom: 10px;
+    }
+    /* .container ul .special{
+        white-space: nowrap; 
+        display: flex;
+        align-items: center;
+        position: relative;
+    } */
+    .second-container .log{
+        margin-top: 20px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .second-container .log{
+        list-style: none;
+    }
+    .second-container .log .reg{
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    /* dropdowns */
+.second-container .special-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 15px;
+}
+/* .special-container-one{
+} */
+.special .special-container:hover{
+    height: 100%;
+    opacity: 1;
+}
+/* .special:hover .special-container{
+} */
+
+
+/* hamburger */
+#checkInput{display: none;}
+.lines{
+  z-index: 500;
+  position: relative;
+  /* top: 20px; */
+  left: 5px;
+}
+.line{
+    width: 30px;
+    height: 2px;
+    display: block;
+  background-color: #000000;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.line::before ,
+.line::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: #000000;
+  position: absolute;
+  top: -10px;
+}
+.line::after {
+  top: 10px;
+}
+
+#checkInput:checked ~ .lines > .line {
+    background-color: #000000;
+    transform: rotate(135deg);
+  }
+  #checkInput:checked ~ .lines > .line::before,
+  #checkInput:checked ~ .lines > .line::after {
+  top: 0;
+    background-color: #000000;
+    transform: rotate(90deg);
+  }
+  #checkInput:checked ~ .lines > .line:hover::before,
+  #checkInput:checked ~ .lines > .line:hover::after {
+    transform: rotate(270deg);
+    transition: all 0.4s ease;
+  }
+
+  /* show navbar */
+#checkInput:checked ~ .navlist{
+    right: 0;
+} 
+}

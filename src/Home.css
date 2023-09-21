@@ -1,0 +1,102 @@
+.home-container{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* left side */
+.home-container .left-side{
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+}
+.home-container h1.heading{
+    font-size: 60px;
+}
+.home-container .btn{
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #000000;
+    color: #ffff;
+    text-align: center;
+}
+.home-container .btn:hover{
+    cursor: pointer;
+    background-color: #ffff;
+    color: #000000;
+}
+.home-container .up{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.home-container .sponsors{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.home-container .sponsors img{
+    width: auto;
+    height: auto;
+}
+
+/* right side */
+.home-container .right-side{
+    width: 35%;
+}
+.home-container .right-side img{
+    max-width: 100%;
+}
+
+
+/* responsiveness */
+@media (max-width: 390px) {
+    .home-container{display: none;}
+
+    .second-home-container .right-side{
+        width: 100%;
+    }
+    .second-home-container .right-side img{
+        max-width: 100%;
+    }
+    .second-home-container .left-side{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+    }
+    .second-home-container .left-side .up{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .second-home-container .left-side h1{
+        font-size: 40px;
+    }
+    .second-home-container .btn{
+        width: 100px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #000000;
+        color: #ffff;
+        text-align: center;
+    }
+    .second-home-container .btn:hover{
+        cursor: pointer;
+        background-color: #ffff;
+        color: #000000;
+    }   
+    .second-home-container .sponsors{
+        display: flex;
+        align-items: center;
+        gap: 1%;
+    }
+}
